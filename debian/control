@@ -1,0 +1,34 @@
+Source: libutempter
+Priority: optional
+Maintainer: Debian Krap Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Fathi Boudra <fabo@debian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+Section: libs
+Homepage: http://git.altlinux.org/people/ldv/packages/?p=libutempter.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-kde/krap/libutempter.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/krap/libutempter.git/
+
+Package: libutempter-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libutempter0 (= ${binary:Version}), ${misc:Depends}
+Description: privileged helper for utmp/wtmp updates (development)
+ The libutempter library provides interface for terminal emulators such as
+ screen and xterm to record user sessions to utmp and wtmp files.
+ .
+ This package contains development files required to build
+ utempter-based software.
+
+Package: libutempter0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: privileged helper for utmp/wtmp updates (runtime)
+ The libutempter library provides interface for terminal emulators such as
+ screen and xterm to record user sessions to utmp and wtmp files.
+ .
+ The utempter is a privileged helper used by libutempter library to manipulate
+ utmp and wtmp files.
